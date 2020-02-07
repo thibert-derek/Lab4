@@ -1,0 +1,14 @@
+<span class="whole">
+    <img (click)="clickMe()" *ngIf="content.imageUrl || 'https://www.templetonpress.org/sites/default/files/default_images/default_book_cover.jpg'" src= "{{content.imageUrl || 'https://www.templetonpress.org/sites/default/files/default_images/default_book_cover.jpg'}}">
+<div class="listitem">
+<div *ngIf="content.body">{{content.body}}</div>
+<div *ngIf="content.author">{{content.author}}</div>
+<div appAttribute [textDecoration]='"underline"' *ngIf="content.title">{{content.title}}</div>
+  <div class="type">
+    <strong>Type:</strong> {{ content.type }}
+  </div>
+<div appAttribute [textDecoration]='"bold"' *ngIf="content.tags">{{content.tags.join(', ')}}</div>
+
+</div>
+</span>
+<br>

@@ -1,0 +1,10 @@
+<p>
+  <input [(ngModel)]="twoWayBinding" (ngModelChange)="findBookLive(twoWayBinding)" placeholder="Please enter a book name"><br>
+  <button (click)="findBook(twoWayBinding.value)">Find that book!</button>
+</p>
+<p class="result" *ngIf="bookFoundLive">
+  <strong>Result:</strong><br>
+  {{ bookFoundLive }}
+</p>
+
+<app-content-card *ngFor="let item of content; last as isLast;" [content]="item" [class.is-last]="isLast"></app-content-card>
